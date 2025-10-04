@@ -14,7 +14,7 @@ function gameHandler(io, socket) {
     const opponent = getOpponent(socket.id);
     if (!opponent) return;
 
-    console.log(`[Server] Player ${socket.id} rolled: ${number}`);
+  
 
     // Send the rolled number to the opponent
     io.to(opponent).emit("opponent_rolled", { number });

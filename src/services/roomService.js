@@ -29,13 +29,13 @@ export const leaveRoom = (roomId, socketId) => {
 };
 
 export const switchTurn = (roomId, socketId) => {
-    console.log("rooms:before",rooms)
+   
   const room = _.cloneDeep(rooms.get(roomId));
   if (!room) return null;
   const otherPlayer =  room.players.find((p) => p.id != socketId);
   room.currentTurn = otherPlayer.id;
   rooms.set(roomId,room)
-  console.log("rooms:after",rooms,room)
+ 
   return room;
 };
 
